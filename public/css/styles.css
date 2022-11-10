@@ -1,0 +1,1664 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Blaka&family=Press+Start+2P&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Roboto", sans-serif;
+  background: #f3dec0;
+  background-image: radial-gradient(#f3dec0, #e7b56f);
+  z-index: 0;
+}
+
+.app {
+  height: 100vh;
+  width: 100vw;
+}
+
+.introduction {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  user-select: none;
+}
+.introduction .intro-title {
+  font-size: 12rem;
+  background: linear-gradient(rgb(247, 133, 62), rgb(177, 96, 45));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: auto;
+  position: absolute;
+  top: 25%;
+  animation: up 1s ease-in-out infinite alternate;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+}
+@keyframes up {
+  100% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes title-shadow {
+  0% {
+    box-shadow: 0 0 10px 1px rgba(184, 120, 37, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 20px 10px rgba(184, 120, 37, 0.3);
+  }
+}
+.introduction .intro-title::after {
+  content: "";
+  border-radius: 100%;
+  width: 35rem;
+  animation: up 1s ease-in-out infinite alternate-reverse, title-shadow 1s infinite alternate-reverse;
+  position: absolute;
+  top: 250px;
+}
+.introduction .intro-button {
+  height: 7rem;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+  font-size: 2rem;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background: #f3894c;
+  background-image: linear-gradient(rgb(247, 133, 62), rgb(212, 104, 37));
+  box-shadow: 0px 10px rgb(180, 88, 30);
+  transition: 0.2s ease-in-out;
+  font-family: "Montserrat", sans-serif;
+  z-index: 1;
+  position: relative;
+  margin: auto;
+}
+.introduction .intro-button:hover:not(.expansion-1) {
+  color: #f3d6ae;
+  background: rgb(247, 133, 62);
+  box-shadow: 0px 10px #e26e2a, 0px 5px 10px 10px #dd9b40;
+}
+.introduction .intro-button .arm {
+  position: absolute;
+  left: 0rem;
+  top: 8rem;
+  height: 5rem;
+  width: 0rem;
+  background: linear-gradient(rgb(100, 100, 99), rgb(58, 56, 56));
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  animation: growArm 0.5s ease-in-out 3s 1 normal forwards;
+}
+@keyframes growArm {
+  60% {
+    top: 8rem;
+    left: -1rem;
+    height: 5rem;
+    width: 1rem;
+  }
+  100% {
+    top: 5.5rem;
+    left: -2rem;
+    height: 10rem;
+    width: 2rem;
+  }
+}
+.introduction .intro-button .arm .arm-joint {
+  position: absolute;
+  margin: auto;
+  left: 0rem;
+  top: 0;
+  bottom: 0;
+  height: 7rem;
+  width: 0rem;
+  background: linear-gradient(rgb(83, 79, 79), rgb(29, 27, 27));
+  border-top-left-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+  animation: growJoint 0.5s ease-in-out 3.5s 1 normal forwards;
+  z-index: 1;
+}
+@keyframes growJoint {
+  30% {
+    left: 0rem;
+    top: 0;
+    bottom: 0;
+    height: 5rem;
+    width: 0rem;
+  }
+  100% {
+    left: -4rem;
+    top: 0;
+    bottom: 0;
+    height: 5rem;
+    width: 4rem;
+  }
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 {
+  position: absolute;
+  top: 35%;
+  left: 30%;
+  height: 0rem;
+  width: 3rem;
+  background: white;
+  border-radius: 5rem;
+  transform: rotate(30deg);
+  background: linear-gradient(to right, rgb(94, 90, 90), rgb(29, 27, 27));
+  transform-origin: top;
+  animation: idle1 1s ease-in-out infinite alternate, height1 0.3s ease-in-out 4s 1 normal forwards;
+}
+@keyframes height1 {
+  0% {
+    height: 0rem;
+  }
+  100% {
+    height: 18rem;
+  }
+}
+@keyframes idle1 {
+  0% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(35deg);
+  }
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 {
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  height: 0rem;
+  width: 3rem;
+  background: white;
+  border-radius: 5rem;
+  transform: rotate(56deg);
+  transform-origin: bottom;
+  background: linear-gradient(to right, rgb(102, 98, 98), rgb(29, 27, 27));
+  animation: idle2 1s ease-in-out infinite alternate, height2 0.3s ease-in-out 4.3s 1 normal forwards;
+}
+@keyframes height2 {
+  0% {
+    height: 0rem;
+  }
+  100% {
+    height: 69rem;
+  }
+}
+@keyframes idle2 {
+  0% {
+    transform: rotate(56deg);
+  }
+  100% {
+    transform: rotate(53deg);
+  }
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: -50%;
+  height: 0rem;
+  width: 0rem;
+  background: white;
+  border-radius: 5rem;
+  transform-origin: bottom;
+  background: linear-gradient(to bottom, rgb(88, 85, 85), rgb(49, 45, 45));
+  animation: height3 0.3s ease-in-out 4.6s 1 normal forwards, idle3 1s ease-in-out infinite alternate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes idle3 {
+  0% {
+    transform: rotate(-85deg);
+  }
+  100% {
+    transform: rotate(-89deg);
+  }
+}
+@keyframes height3 {
+  0% {
+    height: 0rem;
+    width: 0rem;
+    border-radius: 5rem;
+  }
+  100% {
+    height: 20rem;
+    width: 40rem;
+    border-radius: 1rem;
+  }
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-1 {
+  height: 90%;
+  width: 90%;
+  border-radius: 1rem;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+  overflow: hidden;
+  box-shadow: inset 0px 10px 25px rgba(0, 0, 0, 0.4), inset 0px -10px 25px rgba(250, 250, 250, 0.05);
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Press Start 2P", cursive;
+  gap: 1rem;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-1::before {
+  content: " ";
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(to bottom, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.05) 50%);
+  background-size: 100% 8px;
+  z-index: 2;
+  pointer-events: none;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-1 .h1-name1 {
+  color: green;
+  font-size: 1.2rem;
+  margin-top: 3rem;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-1 .input-name1 {
+  width: 60%;
+  max-width: auto;
+  background: transparent;
+  outline: none;
+  border: none;
+  color: green;
+  font-size: 2rem;
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  border-bottom: 1px solid green;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-1 .p1-select {
+  font-size: 1rem;
+  color: green;
+  margin-top: 1rem;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-1 .p1-WB {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-1 .p1-Wbutton {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 1rem;
+  outline: none;
+  background: linear-gradient(rgb(219, 219, 219), rgb(85, 85, 85));
+  cursor: pointer;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-1 .p1-Wbutton .fa-chess-queen {
+  font-size: 3.5rem;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-1 .p1-Wbutton:hover {
+  background: rgba(0, 128, 0, 0.4);
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-1 .p1-Wbutton:active {
+  background: rgba(0, 77, 0, 0.4);
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-1 .p1-Bbutton {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 1rem;
+  background: linear-gradient(rgb(219, 219, 219), rgb(85, 85, 85));
+  outline: none;
+  cursor: pointer;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-1 .p1-Bbutton .fa-chess-queen {
+  font-size: 3.5rem;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-1 .p1-Bbutton:hover {
+  background: rgba(0, 128, 0, 0.4);
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-1 .p1-Bbutton:active {
+  background: rgba(0, 77, 0, 0.4);
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-2 {
+  height: 90%;
+  width: 90%;
+  border-radius: 1rem;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+  overflow: hidden;
+  box-shadow: inset 0px 10px 25px rgba(0, 0, 0, 0.4), inset 0px -10px 25px rgba(250, 250, 250, 0.05);
+  position: relative;
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Press Start 2P", cursive;
+  gap: 1rem;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-2::before {
+  content: " ";
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(to bottom, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.05) 50%);
+  background-size: 100% 8px;
+  z-index: 2;
+  pointer-events: none;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-2 .h1-name2 {
+  color: green;
+  font-size: 1.2rem;
+  margin-top: 3rem;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-2 .input-name2 {
+  width: 60%;
+  max-width: auto;
+  background: transparent;
+  outline: none;
+  border: none;
+  color: green;
+  font-size: 2rem;
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  border-bottom: 1px solid green;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-2 .p2-select {
+  font-size: 1rem;
+  color: green;
+  margin-top: 1rem;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-2 .p2-WB {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-2 .p2-Wbutton {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 0.5rem;
+  outline: none;
+  background: linear-gradient(rgb(219, 219, 219), rgb(85, 85, 85));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-2 .p2-Wbutton .fa-chess-queen {
+  font-size: 2rem;
+  color: black;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-2 .p2-Bbutton {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(rgb(219, 219, 219), rgb(85, 85, 85));
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-2 .p2-Bbutton .fa-chess-queen {
+  color: black;
+  font-size: 2rem;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-2 .start-game {
+  padding: 0.7rem 4rem;
+  border-radius: 1rem;
+  background: linear-gradient(rgb(219, 219, 219), rgb(85, 85, 85));
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: "Press Start 2P", cursive;
+  outline: none;
+  border: none;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-2 .start-game:hover {
+  background: rgba(22, 170, 22, 0.4);
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen-2 .start-game:active {
+  background: rgba(0, 77, 0, 0.4);
+}
+.introduction .intro-button .container {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  border: double 5px transparent;
+  border-radius: 1rem;
+  background-image: linear-gradient(rgb(247, 133, 62), rgb(218, 119, 58)), linear-gradient(rgb(255, 190, 146), rgb(187, 136, 103));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  height: 45rem;
+  width: 45rem;
+  display: none;
+  transition: all 1s;
+  opacity: 0;
+  animation: opacity 0.5s ease-in-out 1.5s normal forwards;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+@keyframes opacity {
+  100% {
+    transform: translateY(-15px);
+    box-shadow: 0 12px 5px 3px rgba(0, 0, 0, 0.3), inset 0 15px 5px 0 rgba(0, 0, 0, 0.3);
+  }
+}
+.introduction .intro-button .container .cell {
+  width: 12.5%;
+  height: 12.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.1));
+  animation: shade 0.5s ease-in-out 1.5s normal forwards;
+  opacity: 0;
+  transform: translate(-30px, -30px) skew(0, -20deg);
+  cursor: default;
+}
+.introduction .intro-button .container .cell .piece {
+  height: 90%;
+  width: auto;
+}
+.introduction .intro-button .container .cell:nth-child(1) {
+  animation: delayCell 0.3s ease-in-out 1.82s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(2) {
+  animation: delayCell 0.3s ease-in-out 1.84s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(3) {
+  animation: delayCell 0.3s ease-in-out 1.86s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(4) {
+  animation: delayCell 0.3s ease-in-out 1.88s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(5) {
+  animation: delayCell 0.3s ease-in-out 1.9s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(6) {
+  animation: delayCell 0.3s ease-in-out 1.92s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(7) {
+  animation: delayCell 0.3s ease-in-out 1.94s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(8) {
+  animation: delayCell 0.3s ease-in-out 1.96s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(9) {
+  animation: delayCell 0.3s ease-in-out 1.98s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(10) {
+  animation: delayCell 0.3s ease-in-out 2s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(11) {
+  animation: delayCell 0.3s ease-in-out 2.02s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(12) {
+  animation: delayCell 0.3s ease-in-out 2.04s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(13) {
+  animation: delayCell 0.3s ease-in-out 2.06s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(14) {
+  animation: delayCell 0.3s ease-in-out 2.08s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(15) {
+  animation: delayCell 0.3s ease-in-out 2.1s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(16) {
+  animation: delayCell 0.3s ease-in-out 2.12s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(17) {
+  animation: delayCell 0.3s ease-in-out 2.14s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(18) {
+  animation: delayCell 0.3s ease-in-out 2.16s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(19) {
+  animation: delayCell 0.3s ease-in-out 2.18s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(20) {
+  animation: delayCell 0.3s ease-in-out 2.2s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(21) {
+  animation: delayCell 0.3s ease-in-out 2.22s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(22) {
+  animation: delayCell 0.3s ease-in-out 2.24s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(23) {
+  animation: delayCell 0.3s ease-in-out 2.26s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(24) {
+  animation: delayCell 0.3s ease-in-out 2.28s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(25) {
+  animation: delayCell 0.3s ease-in-out 2.3s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(26) {
+  animation: delayCell 0.3s ease-in-out 2.32s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(27) {
+  animation: delayCell 0.3s ease-in-out 2.34s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(28) {
+  animation: delayCell 0.3s ease-in-out 2.36s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(29) {
+  animation: delayCell 0.3s ease-in-out 2.38s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(30) {
+  animation: delayCell 0.3s ease-in-out 2.4s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(31) {
+  animation: delayCell 0.3s ease-in-out 2.42s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(32) {
+  animation: delayCell 0.3s ease-in-out 2.44s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(33) {
+  animation: delayCell 0.3s ease-in-out 2.46s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(34) {
+  animation: delayCell 0.3s ease-in-out 2.48s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(35) {
+  animation: delayCell 0.3s ease-in-out 2.5s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(36) {
+  animation: delayCell 0.3s ease-in-out 2.52s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(37) {
+  animation: delayCell 0.3s ease-in-out 2.54s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(38) {
+  animation: delayCell 0.3s ease-in-out 2.56s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(39) {
+  animation: delayCell 0.3s ease-in-out 2.58s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(40) {
+  animation: delayCell 0.3s ease-in-out 2.6s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(41) {
+  animation: delayCell 0.3s ease-in-out 2.62s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(42) {
+  animation: delayCell 0.3s ease-in-out 2.64s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(43) {
+  animation: delayCell 0.3s ease-in-out 2.66s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(44) {
+  animation: delayCell 0.3s ease-in-out 2.68s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(45) {
+  animation: delayCell 0.3s ease-in-out 2.7s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(46) {
+  animation: delayCell 0.3s ease-in-out 2.72s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(47) {
+  animation: delayCell 0.3s ease-in-out 2.74s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(48) {
+  animation: delayCell 0.3s ease-in-out 2.76s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(49) {
+  animation: delayCell 0.3s ease-in-out 2.78s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(50) {
+  animation: delayCell 0.3s ease-in-out 2.8s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(51) {
+  animation: delayCell 0.3s ease-in-out 2.82s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(52) {
+  animation: delayCell 0.3s ease-in-out 2.84s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(53) {
+  animation: delayCell 0.3s ease-in-out 2.86s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(54) {
+  animation: delayCell 0.3s ease-in-out 2.88s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(55) {
+  animation: delayCell 0.3s ease-in-out 2.9s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(56) {
+  animation: delayCell 0.3s ease-in-out 2.92s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(57) {
+  animation: delayCell 0.3s ease-in-out 2.94s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(58) {
+  animation: delayCell 0.3s ease-in-out 2.96s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(59) {
+  animation: delayCell 0.3s ease-in-out 2.98s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(60) {
+  animation: delayCell 0.3s ease-in-out 3s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(61) {
+  animation: delayCell 0.3s ease-in-out 3.02s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(62) {
+  animation: delayCell 0.3s ease-in-out 3.04s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(63) {
+  animation: delayCell 0.3s ease-in-out 3.06s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(64) {
+  animation: delayCell 0.3s ease-in-out 3.08s 1 normal forwards;
+}
+@keyframes delayCell {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+@keyframes shade {
+  100% {
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+}
+.introduction .intro-button .container .cell:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.2));
+}
+.introduction .intro-button .container .cell:nth-child(n+1):nth-child(-n+8):nth-child(even) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+}
+.introduction .intro-button .container .cell:nth-child(n+1):nth-child(-n+8):nth-child(even):hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45));
+}
+.introduction .intro-button .container .cell:nth-child(n+9):nth-child(-n+16):nth-child(odd) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+}
+.introduction .intro-button .container .cell:nth-child(n+9):nth-child(-n+16):nth-child(odd):hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45));
+}
+.introduction .intro-button .container .cell:nth-child(n+17):nth-child(-n+24):nth-child(even) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+}
+.introduction .intro-button .container .cell:nth-child(n+17):nth-child(-n+24):nth-child(even):hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45));
+}
+.introduction .intro-button .container .cell:nth-child(n+25):nth-child(-n+32):nth-child(odd) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+}
+.introduction .intro-button .container .cell:nth-child(n+25):nth-child(-n+32):nth-child(odd):hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45));
+}
+.introduction .intro-button .container .cell:nth-child(n+33):nth-child(-n+40):nth-child(even) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+}
+.introduction .intro-button .container .cell:nth-child(n+33):nth-child(-n+40):nth-child(even):hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45));
+}
+.introduction .intro-button .container .cell:nth-child(n+41):nth-child(-n+48):nth-child(odd) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+}
+.introduction .intro-button .container .cell:nth-child(n+41):nth-child(-n+48):nth-child(odd):hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45));
+}
+.introduction .intro-button .container .cell:nth-child(n+49):nth-child(-n+56):nth-child(even) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+}
+.introduction .intro-button .container .cell:nth-child(n+49):nth-child(-n+56):nth-child(even):hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45));
+}
+.introduction .intro-button .container .cell:nth-child(n+57):nth-child(-n+64):nth-child(odd) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+}
+.introduction .intro-button .container .cell:nth-child(n+57):nth-child(-n+64):nth-child(odd):hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45));
+}
+
+.expansion-1 {
+  animation: padding 2s ease-in-out, border 0.5s ease-in-out 1s, shadow 0.5s ease-in-out 1.5s;
+  animation-fill-mode: forwards;
+  cursor: not-allowed;
+}
+@keyframes border {
+  0% {
+    border-radius: 0;
+  }
+  100% {
+    border-radius: 2rem 30% 2rem 30%;
+  }
+}
+@keyframes shadow {
+  0% {
+    box-shadow: 0px 10px rgb(180, 88, 30);
+  }
+  100% {
+    box-shadow: 0px 60px rgb(180, 88, 30), inset 0px -60px 40px 0 rgba(0, 0, 0, 0.05), inset 0px 60px 40px 0 rgba(250, 250, 250, 0.08);
+  }
+}
+@keyframes padding {
+  33% {
+    padding: 0 35rem 0rem 35rem;
+  }
+  66% {
+    padding: 60rem 35rem 0 35rem;
+  }
+  100% {
+    padding: 60rem 35rem 0 35rem;
+  }
+}
+
+.opacity {
+  opacity: 0;
+}
+
+.fa-chess-bishop {
+  font-size: 10rem;
+  text-shadow: 0px 10px #e28965;
+}
+
+@keyframes height3reverse {
+  0% {
+    height: 0rem;
+    width: 0rem;
+    border-radius: 5rem;
+    transform: rotate(-85deg);
+    opacity: 0;
+  }
+  100% {
+    height: 20rem;
+    width: 40rem;
+    border-radius: 1rem;
+    transform: rotate(-89deg);
+  }
+}
+@keyframes height2reverse {
+  0% {
+    height: 0rem;
+    opacity: 0;
+  }
+  100% {
+    height: 69rem;
+  }
+}
+@keyframes height1reverse {
+  0% {
+    height: 0rem;
+    opacity: 0;
+  }
+  100% {
+    height: 18rem;
+  }
+}
+@keyframes growJointreverse {
+  30% {
+    left: 0rem;
+    top: 0;
+    bottom: 0;
+    height: 5rem;
+    width: 0rem;
+    opacity: 0;
+  }
+  100% {
+    left: -4rem;
+    top: 0;
+    bottom: 0;
+    height: 5rem;
+    width: 4rem;
+  }
+}
+@keyframes growArmreverse {
+  60% {
+    top: 8rem;
+    left: -1rem;
+    height: 5rem;
+    width: 1rem;
+    opacity: 0;
+  }
+  100% {
+    top: 5.5rem;
+    left: -2rem;
+    height: 10rem;
+    width: 2rem;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
